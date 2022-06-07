@@ -1,0 +1,28 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 83px;
+}
+.nav-Link {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.nav-Link p:nth-child(1) {
+  color: #81bb3f;
+}
+.nav-Link p {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.profile-details {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+.profile-details img {
+  margin-right: 30px;
+}
