@@ -6,7 +6,6 @@ import bottom_header from "../../images/bottom-header.png";
 const HeaderBottom = () => {
   return (
     <div className="bottom-header-container">
-      {/* <div> */}
       <img width="100%" src={bottom_header} alt="bottom-header-img" />
       <div className="bottom-header-div">
         <div>
@@ -20,7 +19,6 @@ const HeaderBottom = () => {
           backyard garden, or farm.
         </p>
       </div>
-      {/* </div> */}
     </div>
   );
 };

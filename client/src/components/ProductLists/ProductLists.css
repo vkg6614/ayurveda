@@ -1,17 +1,13 @@
 .productlist-main-container {
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid black; */
-  /* height: 600px; */
   width: 90%;
   margin: 0 auto;
 }
 .productlist-main-container .left-container {
-  /* border: 1px solid black; */
   width: 344px;
 }
 .productlist-main-container .product-list-main-div {
-  border: 1px solid black;
   width: 60%;
 }
 
@@ -19,7 +15,6 @@
 .filter-heading > h3,
 .quantity-heading > h3 {
   font-size: 28px;
-  /* color: red; */
 }
 
 .left-container .sort-heading,
@@ -56,4 +51,10 @@
   color: #7e7e7e;
   font-size: 28px;
   margin-bottom: 10px;
+}
+
+.product-list-main-div {
+  display: grid;
+  gap: 110px;
+  grid-template-columns: repeat(3, 1fr);
 }

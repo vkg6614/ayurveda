@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Product from "./Product/Product";
 import "./ProductLists.css";
 import filter from "../../images/filter.png";
 import sort from "../../images/sort.png";
 import quantity from "../../images/quantity.png";
+import axios from "axios";
 
 const ProductLists = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    const { data } = await axios.get("http://localhost:5000/products");
+    setProducts(data);
+  };
+
+  console.log(products);
   return (
     <div className="productlist-main-container">
       <div className="left-container">
@@ -51,7 +63,10 @@ const ProductLists = () => {
         </div>
       </div>
       <div className="product-list-main-div">
-        <Product />
+        {products &&
+          products.map((product) => (
+            <Product key={product._id} product={product} />
+          ))}
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
         <div className="contact-details">
           <div>
-            <i class="material-icons">add_location</i>
+            <i className="material-icons">add_location</i>
             <span>
               No. 55,Anitya Apartment..
               <br />
@@ -49,12 +49,12 @@ const Footer = () => {
           </div>
 
           <div>
-            <i class="material-icons">email</i>
+            <i className="material-icons">email</i>
             <span>+91 83105 34680</span>
           </div>
 
           <div>
-            <i class="material-icons">call</i>
+            <i className="material-icons">call</i>
             <span>ingo@arshpvtltd.com</span>
           </div>
         </div>
