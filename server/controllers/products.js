@@ -8,6 +8,17 @@ const getProducts = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
+const getProduct = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const product = await Product.findById(id);
+    res.status(200).json(product);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
 const createProduct = async (req, res) => {
   try {
     const product = await Product.create({
@@ -23,4 +34,5 @@ const createProduct = async (req, res) => {
 module.exports = {
   getProducts,
   createProduct,
+  getProduct,
 };

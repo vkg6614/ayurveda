@@ -1,8 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { cartAction } from "../../../Redux/Actions/Actions";
 import heart from "../../../images/heart.png";
 import addtocart from "../../../images/addtocart.png";
 import "./Product.css";
 const Product = ({ product }) => {
+  const dispatch = useDispatch();
+  const handleAddToCartClick = (product) => {
+    dispatch(cartAction(product));
+  };
+
   return (
     <>
       <div>
@@ -23,7 +30,10 @@ const Product = ({ product }) => {
           </p>
         </div>
 
-        <div className="product-cart-div">
+        <div
+          className="product-cart-div"
+          onClick={() => handleAddToCartClick(product)}
+        >
           <img src={addtocart} alt="cart-logo" />
           <p>Add to cart</p>
         </div>

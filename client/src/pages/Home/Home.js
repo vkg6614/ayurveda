@@ -13,6 +13,14 @@ const Home = () => {
         <h1>nature</h1>
       </div>
       <ProductLists />
+      <div className="pagination">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+        <p>6</p>
+      </div>
       <HeaderBottom />
     </div>
   );
