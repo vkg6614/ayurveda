@@ -3,6 +3,7 @@ import "./Home.css";
 import header_img from "../../images/rectangle.png";
 import ProductLists from "../../components/ProductLists/ProductLists";
 import HeaderBottom from "../../components/HeaderBottom/HeaderBottom";
+import Pagination from "../../components/Pagination/Pagination";
 
 const Home = () => {
   return (
@@ -13,14 +14,9 @@ const Home = () => {
         <h1>nature</h1>
       </div>
       <ProductLists />
-      <div className="pagination">
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
-        <p>5</p>
-        <p>6</p>
-      </div>
+
+      <Pagination />
+
       <HeaderBottom />
     </div>
   );
