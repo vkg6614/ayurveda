@@ -10,6 +10,7 @@
 }
 
 .pagination p {
+  cursor: pointer;
   margin-right: 10px;
   border-radius: 50%;
   padding: 10px 16px;
