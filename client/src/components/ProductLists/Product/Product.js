@@ -3,11 +3,17 @@ import { useDispatch } from "react-redux";
 import { cartAction } from "../../../Redux/Actions/Actions";
 import heart from "../../../images/heart.png";
 import addtocart from "../../../images/addtocart.png";
+import { useSelector } from "react-redux";
 import "./Product.css";
 const Product = ({ product }) => {
   const dispatch = useDispatch();
+  const getData = useSelector((state) => state.cartReducer);
+
   const handleAddToCartClick = (product) => {
-    dispatch(cartAction(product));
+    let temp = getData.filter((data) => data._id === product._id);
+    if (!temp.length) {
+      dispatch(cartAction(product));
+    }
   };
 
   return (
@@ -20,6 +26,7 @@ const Product = ({ product }) => {
           </div>
           <img
             height="120px"
+            width="60%"
             src={product.product_img}
             alt={product.product_name}
           />

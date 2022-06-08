@@ -1,15 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import arshlogo from "../../images/ARSH-logo.jpg";
 import avatar from "../../images/avatar.png";
 import cart from "../../images/cart.png";
 import favourite from "../../images/favourite.png";
 import notification from "../../images/notification.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteCartAction } from "../../Redux/Actions/Actions";
 
 const Navbar = () => {
+  const [totPrice, setTotPrice] = useState(0);
+  const dispatch = useDispatch();
+  const deleteCartHandleClick = (id) => {
+    dispatch(deleteCartAction(id));
+  };
+
   const [cartPage, setCartPage] = useState({ display: "none" });
   const getData = useSelector((state) => state.cartReducer);
+
+  useEffect(() => {
+    let data = getData.reduce((acc, currElem) => {
+      return acc + currElem.product_price;
+    }, 0);
+    console.log(data, "da");
+    setTotPrice(data);
+  }, [getData]);
 
   return (
     <div className="navbar-container">
@@ -24,7 +39,7 @@ const Navbar = () => {
               <div></div>
             </div>
             {getData.map((data) => (
-              <div className="single-cart-product">
+              <div key={data._id} className="single-cart-product">
                 <img width="80px" src={data.product_img} alt="img" />
                 <div className="single-cart-middle-div">
                   <p>
@@ -37,12 +52,17 @@ const Navbar = () => {
                     <strong>Quantity: </strong> {data.product_quantity}
                   </p>
                 </div>
-                <i className="material-icons">delete</i>
+                <i
+                  className="material-icons"
+                  onClick={() => deleteCartHandleClick(data._id)}
+                >
+                  delete
+                </i>
               </div>
             ))}
 
             <p>
-              <strong>Total: </strong>₹500
+              <strong>Total: </strong>₹{totPrice}
             </p>
           </div>
         )}
