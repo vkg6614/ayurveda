@@ -72,6 +72,10 @@
   padding: 10px 5px;
 }
 
+.single-cart-product .material-icons {
+  cursor: pointer;
+}
+
 .single-cart-middle-div {
   margin: 0px 30px;
   color: green;
