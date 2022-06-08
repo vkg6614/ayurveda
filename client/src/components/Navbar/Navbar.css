@@ -20,6 +20,7 @@
 }
 
 .cartIcon-div {
+  cursor: pointer;
   position: relative;
 }
 .cartIcon-div p {
